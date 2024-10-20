@@ -1,27 +1,11 @@
+with open('esercizi/rimario/parole.txt', 'r', encoding='utf-8') as file:
+    righe = file.readlines()
+parole = []
 
 
-parole = [
-    "Amicizia", "Bellissimo", "Cucina", "Difficile", "Elefante", "Fantasia", "Generoso",
-    "Ispirare", "Laboratorio", "Meraviglia", "Nostalgia", "Offrire", "Pensiero",
-    "Qualità", "Risultato", "Sicurezza", "Tradizione", "Università", "Vegetale", 
-    "Abitazione", "Crescita", "Divertente", "Esperienza", "Fratello", "Giocattolo",
-    "Inseguito", "Lavoratore", "Montagna", "Notte", "Osservare", "Prendersi", 
-    "Quotidiano", "Responsabile", "Scoprire", "Teatrale", "Umanità", "Volontario",
-    "Amministrare", "Carattere", "Educazione", "Fattoria", "Giustizia", "Hospital", 
-    "Istituto", "Maturità", "Nutriente", "Ospitale", "Pensatore", "Qualificato", 
-    "Regolamento", "Appuntamento", "Sostenibile", "Programmare", "Comunicare", 
-    "Sorpresa", "Riflessione", "Esplorare", "Semplicità", "Trascorrere", 
-    "Navigazione", "Collaborare", "Abbigliamento", "Dedicazione", "Eccellenza", 
-    "Sviluppo", "Flessibilità", "Conoscenza", "Affidabilità", "Informazione", 
-    "Ambiente", "Creatività", "Valutazione", "Invenzione", "Determinazione", 
-    "Ricchezza", "Intelligenza", "Autenticità", "Innovazione", "Apprezzamento", 
-    "Motivazione", "Gestione", "Iniziativa", "Comportamento", "Associazione", 
-    "Immaginazione", "Condivisione", "Riconoscimento", "Realtà", "Osservazione", 
-    "Accoglienza", "Impegno", "Persuasione", "Rappresentazione", "Organizzazione", 
-    "Evidenza", "Preoccupazione", "Utilizzazione", "Fondamentale", 
-    "Conferenza", "Caratteristica", "Contemporaneo", "Autorevolezza", 
-    "Consapevolezza"
-]
+for riga in righe:
+    parole.extend(riga.strip().split())
+
 
 def controlla_rima():
     parola_utente = input("inserisci una parola: ")
