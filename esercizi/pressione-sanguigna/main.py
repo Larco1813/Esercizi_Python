@@ -24,7 +24,7 @@ def ritorna_media():
     while True:
         if 1 <= giorno_media <= 3:
             giorno_selezionato = int(giorno_media - 1)
-            print(f"\nDurante il giorno {giorno_media}, la media sistolica è: {medie[giorno_selezionato]["media sistolica"]}, mentre quella diastolica è: {medie[giorno_selezionato]["media diastolica"]}")
+            print(f"\nDurante il giorno {giorno_media}, la media sistolica è: {medie[giorno_selezionato]["media sistolica"]}, mentre quella diastolica è: {medie[giorno_selezionato]["media diastolica"]}mmHg")
             break
         else:
             print("Giorno non valido. Seleziona un valore tra 1 e 3.")
@@ -32,13 +32,13 @@ def ritorna_media():
 def pressione_alta(misurazione, idx, giorno):
     for misurazione in giorno:
         if misurazione["sistolica"] > 120:
-            print(f"Attenzione! La **sistolica** del giorno {idx + 1} durante {misurazione['orario']} è alta: {misurazione['sistolica']}")
+            print(f"Attenzione! La **sistolica** del {idx + 1}^ giorno durante {misurazione['orario']} è alta: {misurazione['sistolica']}mmHg")
         elif misurazione["sistolica"]  < 90:
-            print(f"Attenzione! La **sistolica** del giorno {idx + 1} durante {misurazione['orario']} è bassa: {misurazione['sistolica']}")
+            print(f"Attenzione! La **sistolica** del {idx + 1}^ giorno durante {misurazione['orario']} è bassa: {misurazione['sistolica']}mmHg")
         if misurazione["diastolica"] > 80:
-            print(f"Attenzione! La **diastolica** del giorno {idx + 1} durante {misurazione['orario']} è alta: {misurazione['diastolica']}")
+            print(f"Attenzione! La **diastolica** del {idx + 1}^ giorno durante {misurazione['orario']} è alta: {misurazione['diastolica']}mmHg")
         elif misurazione["diastolica"] < 60:
-            print(f"Attenzione! La **diastolica** del giorno {idx + 1} durante {misurazione['orario']} è bassa: {misurazione['diastolica']}")
+            print(f"Attenzione! La **diastolica** del {idx + 1}^ giorno durante {misurazione['orario']} è bassa: {misurazione['diastolica']}mmHg")
         
 def richiedi_misurazione(idx , giorno):
     somma_sistolica = 0  
