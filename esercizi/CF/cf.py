@@ -85,10 +85,11 @@ def cod_provenienza(nazione_utente, comune_utente):
     file_path_straniero = 'esercizi/CF/stati.json'
     comuni = leggi_dati_json_italiano(file_path_italiano)
     stati = leggi_dati_json_straniero(file_path_straniero)
+    nazione_utente = nazione_utente.strip().lower()
     
     if nazione_utente.lower() == "italia":    
         for comune in comuni["comuni"]:
-            if comune["comune"].lower() == comune_utente.lower():
+            if comune["comune"].strip().lower() == comune_utente.lower():
                 if "cod_fisco" in comune:
                     cod_provenienza = comune["cod_fisco"]
                 else:
