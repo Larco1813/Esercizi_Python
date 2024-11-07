@@ -123,6 +123,6 @@ def genera_cedro():
             print("".join(passwced)) 
             time.sleep(0.07)  
 
-#generacedro()
+genera_cedro()
 
 

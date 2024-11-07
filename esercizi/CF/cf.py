@@ -63,10 +63,16 @@ def cod_cognome(cognome):
 
 def cod_data(data_input, sesso):
     mese_let = "ABCDEHLMPRST"
-    anno = str(data_input[8:10])
     mese = mese_let[int(data_input[3:5]) -1]
     giorno = str(data_input[0:2])
     
+    if len(data_input.split("/")[2]) == 4:
+        anno = str(data_input[8:10])
+    elif len(data_input.split("/")[2]) == 2:
+        anno = str(data_input[6:8])
+    else:
+        print("formato data non valido")
+        
    
     if sesso.upper() == "F":
         giorno = str(int(giorno) + 40)
@@ -87,7 +93,7 @@ def cod_provenienza(nazione_utente, comune_utente):
     stati = leggi_dati_json_straniero(file_path_straniero)
     nazione_utente = nazione_utente.strip().lower()
     
-    if nazione_utente.lower() == "italia":    
+    if nazione_utente.lower() == "italia": 
         for comune in comuni["comuni"]:
             if comune["comune"].strip().lower() == comune_utente.lower():
                 if "cod_fisco" in comune:
@@ -148,7 +154,7 @@ def cod_carattere_controllo(cf_parziale):
 def generaCF():
     nome = cod_nome(input("inserisci il tuo nome: "))
     cognome = cod_cognome(input("inserisci il tuo cognome: "))
-    data_input = input("Inserisci la tua data di nascita (formato: gg/mm/aaaa): ")
+    data_input = input("Inserisci la tua data di nascita (formato: gg/mm/aaaa o gg/mm/yy): ")
     sesso = input("Inserisci il tuo sesso (M o F): ")
     data = cod_data(data_input, sesso)
     nazione_utente = input("Inserisci il tuo paese natale: ")
