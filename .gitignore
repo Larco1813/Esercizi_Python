@@ -1,0 +1,11 @@
+# Ignora file temporanei di sistema
+*.log
+*.tmp
+
+# Ignora cartelle specifiche
+node_modules/
+dist/
+FinanzeGui/
+
+# Ignora file di configurazione locali
+.env
